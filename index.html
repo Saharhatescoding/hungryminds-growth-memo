@@ -111,9 +111,23 @@
   .sources li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
 
   /* ---------- Section headers ---------- */
-  section{padding:46px 0;border-top:1px solid var(--line-soft)}
-  section:first-of-type{border-top:0}
-  .sec-head{margin-bottom:30px}
+  section{padding:30px 0 46px}
+  /* engraved chapter-divider flourish between sections */
+  section::before{
+    content:"";display:block;width:240px;max-width:70%;height:24px;margin:8px auto 42px;
+    background:center/contain no-repeat
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 26'%3E%3Cg fill='none' stroke='%23C5AD81' stroke-width='1.4' stroke-linecap='round'%3E%3Cpath d='M138 13 H196 q11 0 13 -7 M196 13 q11 0 13 7'/%3E%3Cpath d='M102 13 H44 q-11 0 -13 -7 M44 13 q-11 0 -13 7'/%3E%3Ccircle cx='24' cy='13' r='2'/%3E%3Ccircle cx='216' cy='13' r='2'/%3E%3Cpath d='M102 13 h9 M129 13 h9'/%3E%3C/g%3E%3Cpath d='M120 4 L129 13 L120 22 L111 13 Z' fill='%23C5AD81'/%3E%3C/svg%3E");
+  }
+  section:first-of-type::before{display:none}
+  .sec-head{display:flex;align-items:center;gap:22px;margin-bottom:30px}
+  .sec-head .emblem{width:60px;height:60px;flex:0 0 60px;color:var(--ink);display:block}
+  .sec-head-tx{min-width:0;flex:1}
+  .opp-banner + .sec-head{margin-top:14px}
+
+  /* hero + footer engraved ornament */
+  .brand-orn{display:block;width:230px;max-width:62%;height:auto;margin:24px auto 0}
+  .hero .brand-orn{color:var(--gold)}
+  footer .brand-orn{color:var(--gold);opacity:.78;margin:0 auto 20px}
   .sec-kicker{
     font-size:12px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;
     color:var(--brown);margin-bottom:12px;
@@ -246,7 +260,9 @@
     .kpis{grid-template-columns:repeat(2,1fr)}
     .gallery{grid-template-columns:repeat(2,1fr)}
     .wrap{padding:0 20px}
-    h2 .num{display:block;margin:0 auto 12px}
+    .sec-head{gap:16px}
+    .sec-head .emblem{width:48px;height:48px;flex:0 0 48px}
+    section::before{margin:4px auto 32px}
   }
   @media (max-width:460px){
     .gallery{grid-template-columns:1fr}
@@ -266,6 +282,89 @@
 <body>
 <div class="topbar"></div>
 
+<!-- Engraved emblem sprite — original line-art in the Hungry Minds register
+     (double-ring medallion echoing the brand roundel; no brand assets reused). -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <defs>
+    <g id="hm-frame">
+      <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <circle cx="50" cy="50" r="40.5" fill="none" stroke="currentColor" stroke-width="0.8"/>
+      <g fill="currentColor" stroke="none">
+        <path d="M50 3.6l2.4 3.1-2.4 3.1-2.4-3.1z"/>
+        <path d="M96.4 50l-3.1 2.4-3.1-2.4 3.1-2.4z"/>
+        <path d="M50 96.4l-2.4-3.1 2.4-3.1 2.4 3.1z"/>
+        <path d="M3.6 50l3.1 2.4 3.1-2.4-3.1-2.4z"/>
+      </g>
+    </g>
+    <symbol id="em-buyer" viewBox="0 0 100 100">
+      <use href="#hm-frame"/>
+      <g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+        <circle cx="50" cy="42" r="11"/>
+        <path d="M28 73 q22 -25 44 0"/>
+      </g>
+    </symbol>
+    <symbol id="em-compete" viewBox="0 0 100 100">
+      <use href="#hm-frame"/>
+      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M50 24 l19 7 v15 q0 17 -19 28 q-19 -11 -19 -28 v-15 z" stroke-width="1.9"/>
+        <path d="M50 28 v44" stroke-width="0.8"/>
+        <path d="M50 45 l4 6 -4 6 -4 -6 z" stroke-width="1.5"/>
+      </g>
+    </symbol>
+    <symbol id="em-social" viewBox="0 0 100 100">
+      <use href="#hm-frame"/>
+      <g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+        <circle cx="39" cy="50" r="4.6" fill="currentColor" stroke="none"/>
+        <path d="M48 40 a13 13 0 0 1 0 20"/>
+        <path d="M53 33 a21 21 0 0 1 0 34"/>
+        <path d="M58 26 a29 29 0 0 1 0 48"/>
+      </g>
+    </symbol>
+    <symbol id="em-cro" viewBox="0 0 100 100">
+      <use href="#hm-frame"/>
+      <g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+        <circle cx="38" cy="40" r="10"/>
+        <circle cx="38" cy="40" r="3.4" stroke-width="0.9"/>
+        <path d="M45 47 L69 71"/>
+        <path d="M62 64 l6 6 M57 69 l6 6"/>
+      </g>
+    </symbol>
+    <symbol id="em-email" viewBox="0 0 100 100">
+      <use href="#hm-frame"/>
+      <g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="28" y="35" width="44" height="30" rx="2"/>
+        <path d="M29 37 L50 54 L71 37"/>
+      </g>
+    </symbol>
+    <symbol id="em-gift" viewBox="0 0 100 100">
+      <use href="#hm-frame"/>
+      <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="30" y="46" width="40" height="29" rx="1.5"/>
+        <rect x="27" y="40" width="46" height="7" rx="1"/>
+        <path d="M50 40 V75"/>
+        <path d="M50 40 q-11 -9 -5 -13 q5 -2 5 8 q0 -10 5 -8 q6 4 -5 13"/>
+      </g>
+    </symbol>
+    <symbol id="em-priority" viewBox="0 0 100 100">
+      <use href="#hm-frame"/>
+      <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+        <path d="M50 18 L56 50 L50 82 L44 50 Z"/>
+        <path d="M18 50 L50 56 L82 50 L50 44 Z"/>
+        <circle cx="50" cy="50" r="2.6" fill="currentColor" stroke="none"/>
+      </g>
+    </symbol>
+    <symbol id="orn-flourish" viewBox="0 0 240 26">
+      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+        <path d="M138 13 H196 q11 0 13 -7 M196 13 q11 0 13 7"/>
+        <path d="M102 13 H44 q-11 0 -13 -7 M44 13 q-11 0 -13 7"/>
+        <circle cx="24" cy="13" r="2"/><circle cx="216" cy="13" r="2"/>
+        <path d="M120 4 L129 13 L120 22 L111 13 Z" fill="currentColor"/>
+        <path d="M102 13 h9 M129 13 h9"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
 <div class="wrap">
   <header class="hero">
     <img class="logo" src="assets/hungryminds-logo.png" alt="Hungry Minds">
@@ -274,6 +373,7 @@
     <div class="subtitle">where the highest-leverage, lowest-friction growth sits right now</div>
     <div class="meta">Prepared by K&nbsp;&nbsp;·&nbsp;&nbsp;May 2026</div>
     <div class="rule"></div>
+    <svg class="brand-orn" aria-hidden="true" focusable="false"><use href="#orn-flourish"/></svg>
   </header>
 
   <p class="lede">Hungry Minds has built something genuinely rare in DTC publishing: a premium physical product brand with 400,000+ copies sold, a Kickstarter that placed top 2 in publishing history, and a creator ecosystem most brands do not reach in a decade. The catalog spans The Book ($119), The Black Book, The Last Book, puzzles ($59), playing cards ($39), bundles up to $329, and a $1,000 Luxury Edition.</p>
@@ -294,8 +394,11 @@
   <!-- ICP -->
   <section>
     <div class="sec-head">
-      <div class="sec-kicker">The Buyer</div>
-      <h2>Who Is the Hungry Minds Buyer?</h2>
+      <svg class="emblem" aria-hidden="true" focusable="false"><use href="#em-buyer"/></svg>
+      <div class="sec-head-tx">
+        <div class="sec-kicker">The Buyer</div>
+        <h2>Who Is the Hungry Minds Buyer?</h2>
+      </div>
     </div>
     <p>Based on coding 50 Amazon reviews across 5 markets, the buyer base breaks into 5 distinct archetypes. These ICPs are the strategic foundation for every channel recommendation in this memo.</p>
     <div class="table-scroll">
@@ -316,8 +419,11 @@
   <!-- COMPETITIVE -->
   <section>
     <div class="sec-head">
-      <div class="sec-kicker">The Field</div>
-      <h2>Competitive Landscape</h2>
+      <svg class="emblem" aria-hidden="true" focusable="false"><use href="#em-compete"/></svg>
+      <div class="sec-head-tx">
+        <div class="sec-kicker">The Field</div>
+        <h2>Competitive Landscape</h2>
+      </div>
     </div>
     <p>Three competitors are relevant across different tiers of the market. The Codex is the most direct threat — same model, same buyer. Assouline competes at the premium-luxury gift tier. Taschen is the mainstream art book benchmark Hungry Minds is quietly displacing.</p>
     <div class="table-scroll">
@@ -347,7 +453,8 @@
   <section>
     <div class="opp-banner">Opportunity 1</div>
     <div class="sec-head">
-      <h2><span class="num">1</span>Paid Social: Break the Single-Creator Dependency</h2>
+      <svg class="emblem" aria-hidden="true" focusable="false"><use href="#em-social"/></svg>
+      <div class="sec-head-tx"><h2>Paid Social: Break the Single-Creator Dependency</h2></div>
     </div>
     <div class="kpis">
       <div class="kpi"><div class="v">56</div><div class="l">Active Meta ads (May 2026)</div></div>
@@ -417,7 +524,8 @@
   <section>
     <div class="opp-banner">Opportunity 2</div>
     <div class="sec-head">
-      <h2><span class="num">2</span>On-Site CRO: Fix the Leaks Before Scaling Spend</h2>
+      <svg class="emblem" aria-hidden="true" focusable="false"><use href="#em-cro"/></svg>
+      <div class="sec-head-tx"><h2>On-Site CRO: Fix the Leaks Before Scaling Spend</h2></div>
     </div>
     <div class="kpis">
       <div class="kpi"><div class="v">$119</div><div class="l">Entry AOV — The Book</div></div>
@@ -462,7 +570,8 @@
   <section>
     <div class="opp-banner">Opportunity 3</div>
     <div class="sec-head">
-      <h2><span class="num">3</span>Email: Reclassify, Reschedule, Add a Content Layer</h2>
+      <svg class="emblem" aria-hidden="true" focusable="false"><use href="#em-email"/></svg>
+      <div class="sec-head-tx"><h2>Email: Reclassify, Reschedule, Add a Content Layer</h2></div>
     </div>
     <div class="kpis">
       <div class="kpi"><div class="v">8</div><div class="l">Emails in 7 days to a cold lead</div></div>
@@ -533,7 +642,8 @@
   <section>
     <div class="opp-banner">Opportunity 4</div>
     <div class="sec-head">
-      <h2><span class="num">4</span>B2B &amp; Corporate Gifting: A Channel That Does Not Need Q4</h2>
+      <svg class="emblem" aria-hidden="true" focusable="false"><use href="#em-gift"/></svg>
+      <div class="sec-head-tx"><h2>B2B &amp; Corporate Gifting: A Channel That Does Not Need Q4</h2></div>
     </div>
     <div class="kpis">
       <div class="kpi"><div class="v">~30%</div><div class="l">Amazon reviews with gift context</div></div>
@@ -574,8 +684,11 @@
   <!-- PRIORITY SEQUENCING -->
   <section>
     <div class="sec-head">
-      <div class="sec-kicker">The Order</div>
-      <h2>Priority Sequencing</h2>
+      <svg class="emblem" aria-hidden="true" focusable="false"><use href="#em-priority"/></svg>
+      <div class="sec-head-tx">
+        <div class="sec-kicker">The Order</div>
+        <h2>Priority Sequencing</h2>
+      </div>
     </div>
     <p>These four opportunities compound. A better on-site experience makes paid spend convert at a higher rate. A stronger creator roster grows the email list faster. A newsletter builds the owned audience that makes B2B credible. The order matters.</p>
     <div class="table-scroll">
@@ -594,6 +707,7 @@
 
 <footer>
   <div class="fwrap">
+    <svg class="brand-orn foot-orn" aria-hidden="true" focusable="false"><use href="#orn-flourish"/></svg>
     <div class="fmark">Hungry Minds</div>
     <div class="fdiv"></div>
     <p class="ftag">A collective intellect united by curiosity and a passion for the beautiful.</p>
