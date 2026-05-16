@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hungry Minds — Growth Memo · 4 Priority Opportunities</title>
+<meta name="description" content="A growth memo for Hungry Minds: four priority, low-friction opportunities grounded in publicly available data — paid social, on-site CRO, email, and B2B corporate gifting.">
+<meta property="og:title" content="Hungry Minds — Growth Memo">
+<meta property="og:description" content="4 priority opportunities, grounded in publicly available data.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Type system mirrors the live hungryminds.com theme: Castellar engraved capitals -> Cinzel,
+     Arno Pro literary serif -> Cormorant Garamond, and Rethink Sans (the brand's exact UI face). -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Rethink+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Palette extracted directly from hungryminds.com theme.css */
+    --ink:#001026;            /* --black */
+    --espresso:#2F100F;       /* --title-color */
+    --oxblood:#3E0104;        /* --text-color */
+    --gold:#C5AD81;           /* --gold */
+    --gold-deep:#A88E5E;      /* --gold-free */
+    --brown:#755A31;          /* --brown */
+    --brown-2:#715B37;        /* --brown-2 / --menu-link-color */
+    --red:#B41D1C;            /* --red */
+    --link:#AD7453;           /* --link-in-text-color */
+    --slate:#272E3A;          /* --footer-bg */
+    --slate-2:#243040;        /* --media-bg */
+    --paper:#FBF7EE;          /* warm parchment ground */
+    --paper-2:#F3ECDD;        /* deeper panel */
+    --card:#FFFFFF;
+    --line:rgba(0,16,38,.14);
+    --line-soft:rgba(0,16,38,.08);
+    --gold-tint:rgba(197,173,129,.12);
+    --maxw:880px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Rethink Sans",Arial,Helvetica,sans-serif;
+    color:var(--oxblood);
+    background:var(--paper);
+    font-size:17px;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    text-rendering:optimizeLegibility;
+  }
+  /* faint engraved-paper texture */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(circle at 18% 12%,rgba(197,173,129,.10),transparent 42%),
+      radial-gradient(circle at 84% 78%,rgba(0,16,38,.05),transparent 46%);
+  }
+  .wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  a{color:var(--link);text-decoration:none;border-bottom:1px solid rgba(173,116,83,.4)}
+  a:hover{color:var(--red)}
+
+  /* ---------- Top hairline / masthead rule ---------- */
+  .topbar{height:5px;background:linear-gradient(90deg,var(--ink) 0%,var(--gold) 50%,var(--ink) 100%)}
+
+  /* ---------- Hero ---------- */
+  header.hero{text-align:center;padding:64px 0 30px}
+  .hero img.logo{width:330px;max-width:78%;height:auto;margin:0 auto 30px;display:block}
+  .eyebrow{
+    font-family:"Rethink Sans",sans-serif;
+    font-weight:700;font-size:13px;letter-spacing:.42em;text-transform:uppercase;
+    color:var(--brown);margin-bottom:18px;
+  }
+  h1.title{
+    font-family:"Cinzel",serif;font-weight:600;
+    font-size:clamp(34px,6vw,62px);line-height:1.04;letter-spacing:.01em;
+    color:var(--espresso);text-transform:uppercase;
+  }
+  .hero .subtitle{
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-weight:500;font-style:italic;
+    font-size:clamp(20px,3.4vw,30px);color:var(--brown-2);margin-top:10px;
+  }
+  .hero .meta{
+    margin-top:26px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--oxblood);opacity:.62;
+  }
+  .rule{width:74px;height:2px;background:var(--gold);margin:34px auto 0}
+
+  /* ---------- Lede ---------- */
+  .lede{
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-size:clamp(21px,2.7vw,26px);line-height:1.6;font-weight:500;
+    color:var(--espresso);margin:48px 0 18px;
+  }
+  .lede.small{font-size:clamp(19px,2.3vw,22px);font-weight:400;color:var(--oxblood);margin-top:10px}
+
+  /* ---------- Source callout ---------- */
+  .sources{
+    background:var(--card);border:1px solid var(--line);
+    border-left:4px solid var(--gold);
+    padding:24px 28px;margin:40px 0;border-radius:6px;
+    box-shadow:0 1px 0 rgba(0,16,38,.03);
+  }
+  .sources h4{
+    font-family:"Rethink Sans",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.28em;text-transform:uppercase;color:var(--brown);margin-bottom:14px;
+  }
+  .sources ul{list-style:none}
+  .sources li{position:relative;padding-left:22px;font-size:15px;line-height:1.62;margin:7px 0;color:var(--oxblood)}
+  .sources li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
+
+  /* ---------- Section headers ---------- */
+  section{padding:46px 0;border-top:1px solid var(--line-soft)}
+  section:first-of-type{border-top:0}
+  .sec-head{margin-bottom:30px}
+  .sec-kicker{
+    font-size:12px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--brown);margin-bottom:12px;
+  }
+  h2{
+    font-family:"Cinzel",serif;font-weight:600;
+    font-size:clamp(26px,4.4vw,40px);line-height:1.1;color:var(--espresso);
+    text-transform:uppercase;letter-spacing:.01em;
+  }
+  h2 .num{
+    display:inline-block;font-size:.62em;color:var(--gold-deep);
+    border:2px solid var(--gold);border-radius:50%;
+    width:1.9em;height:1.9em;line-height:1.78em;text-align:center;
+    margin-right:.55em;vertical-align:.06em;
+  }
+  h3{
+    font-family:"Cinzel",serif;font-weight:600;font-size:20px;
+    color:var(--espresso);text-transform:uppercase;letter-spacing:.04em;
+    margin:34px 0 14px;
+  }
+  p{margin:14px 0}
+  strong{color:var(--espresso);font-weight:600}
+
+  /* opportunity banner */
+  .opp-banner{
+    text-align:center;margin:8px 0 2px;
+    font-family:"Rethink Sans",sans-serif;font-size:13px;font-weight:700;
+    letter-spacing:.46em;text-transform:uppercase;color:var(--gold-deep);
+  }
+
+  /* ---------- KPI band ---------- */
+  .kpis{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:6px;
+    overflow:hidden;margin:30px 0 8px;
+  }
+  .kpi{background:var(--ink);padding:26px 16px;text-align:center}
+  .kpi .v{font-family:"Cinzel",serif;font-weight:600;font-size:clamp(26px,4.2vw,38px);color:var(--gold);line-height:1}
+  .kpi .l{margin-top:10px;font-size:12px;line-height:1.4;letter-spacing:.06em;color:rgba(255,255,255,.72);text-transform:uppercase}
+
+  /* ---------- Labeled blocks ---------- */
+  .block{margin:30px 0}
+  .block-label{
+    display:inline-block;font-family:"Rethink Sans",sans-serif;
+    font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+    color:#fff;background:var(--ink);padding:6px 14px;border-radius:3px;margin-bottom:16px;
+  }
+  .block-label.gold{background:var(--gold-deep)}
+  .block-label.red{background:var(--red)}
+
+  /* ---------- Pull quotes (ad copy) ---------- */
+  blockquote{
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-size:clamp(20px,3vw,27px);line-height:1.42;font-style:italic;
+    color:var(--espresso);
+    border-left:3px solid var(--gold);
+    padding:6px 0 6px 26px;margin:22px 0;position:relative;
+  }
+  blockquote::before{
+    content:"\201C";position:absolute;left:14px;top:-10px;
+    font-size:54px;color:var(--gold);opacity:.35;font-family:Georgia,serif;
+  }
+
+  /* ---------- Lists ---------- */
+  ul.checks{list-style:none;margin:16px 0}
+  ul.checks li{position:relative;padding-left:30px;margin:13px 0;line-height:1.6}
+  ul.checks li::before{
+    content:"";position:absolute;left:4px;top:10px;width:9px;height:9px;
+    background:var(--gold);transform:rotate(45deg);box-shadow:0 0 0 3px var(--gold-tint);
+  }
+  ul.checks li strong{display:block;color:var(--espresso);margin-bottom:1px}
+
+  /* ---------- Tables ---------- */
+  .table-scroll{overflow-x:auto;margin:24px 0;border:1px solid var(--line);border-radius:6px}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--card);min-width:560px}
+  thead th{
+    background:var(--ink);color:var(--gold);
+    font-family:"Rethink Sans",sans-serif;font-weight:700;
+    font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+    padding:13px 15px;text-align:left;vertical-align:bottom;border-bottom:2px solid var(--gold);
+  }
+  tbody td{padding:12px 15px;border-bottom:1px solid var(--line-soft);vertical-align:top;line-height:1.5}
+  tbody tr:nth-child(even){background:rgba(197,173,129,.06)}
+  tbody tr:last-child td{border-bottom:0}
+  td.firstcol,th.firstcol{font-weight:600;color:var(--espresso);white-space:normal}
+  .tag{
+    display:inline-block;font-size:11px;font-weight:700;letter-spacing:.05em;
+    text-transform:uppercase;padding:3px 9px;border-radius:3px;white-space:nowrap;
+    background:var(--gold-tint);color:var(--brown);border:1px solid rgba(197,173,129,.5);
+  }
+  .tag.paid{background:rgba(180,29,28,.08);color:var(--red);border-color:rgba(180,29,28,.35)}
+  caption{caption-side:bottom;font-size:13px;color:var(--brown-2);padding:12px 4px 0;text-align:left;font-style:italic;font-family:"Cormorant Garamond",serif}
+
+  /* ---------- Takeaway / principle ---------- */
+  .takeaway{
+    background:var(--ink);color:#f4efe6;border-radius:8px;
+    padding:28px 32px;margin:34px 0;
+  }
+  .takeaway .tk-label{
+    font-size:12px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:10px;
+  }
+  .takeaway p{margin:0;font-family:"Cormorant Garamond",Georgia,serif;font-size:20px;line-height:1.5;color:#f4efe6}
+  .takeaway strong{color:#fff}
+
+  .note{
+    background:var(--paper-2);border:1px dashed var(--brown);
+    padding:18px 22px;border-radius:6px;margin:26px 0;font-size:15px;color:var(--brown-2);
+  }
+  .note b{color:var(--espresso);display:block;margin-bottom:5px;letter-spacing:.04em;text-transform:uppercase;font-size:12px}
+
+  /* ---------- Email gallery ---------- */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:26px 0}
+  .gallery.wide{grid-template-columns:1fr}
+  figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  figure img{display:block;width:100%;height:auto;border-bottom:1px solid var(--line-soft)}
+  figcaption{padding:11px 14px;font-size:12.5px;color:var(--brown-2);font-weight:600;letter-spacing:.02em}
+  figcaption .et{display:block;font-weight:400;color:var(--oxblood);opacity:.7;font-size:12px;margin-top:2px}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--slate);color:rgba(255,255,255,.74);margin-top:60px;padding:54px 0 46px;text-align:center}
+  footer .fwrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  footer .fmark{font-family:"Cinzel",serif;font-size:22px;letter-spacing:.3em;color:#fff;text-transform:uppercase}
+  footer .fdiv{width:60px;height:2px;background:var(--gold);margin:20px auto}
+  footer p{font-size:13px;letter-spacing:.06em;margin:6px 0;color:rgba(255,255,255,.6)}
+  footer .ftag{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:18px;color:rgba(255,255,255,.82);margin-bottom:14px}
+
+  @media (max-width:760px){
+    body{font-size:16px}
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .gallery{grid-template-columns:repeat(2,1fr)}
+    .wrap{padding:0 20px}
+    h2 .num{display:block;margin:0 auto 12px}
+  }
+  @media (max-width:460px){
+    .gallery{grid-template-columns:1fr}
+  }
+
+  @media print{
+    body{background:#fff;font-size:11pt}
+    body::before{display:none}
+    .topbar,footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .kpi,.takeaway,thead th,.block-label{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    section{page-break-inside:auto;padding:22px 0}
+    figure,blockquote,.takeaway,.kpis,.table-scroll{page-break-inside:avoid}
+    a{color:var(--oxblood);border:0}
+  }
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+
+<div class="wrap">
+  <header class="hero">
+    <img class="logo" src="assets/hungryminds-logo.png" alt="Hungry Minds">
+    <div class="eyebrow">Growth Memo</div>
+    <h1 class="title">Four Priority<br>Opportunities</h1>
+    <div class="subtitle">where the highest-leverage, lowest-friction growth sits right now</div>
+    <div class="meta">Prepared by K&nbsp;&nbsp;·&nbsp;&nbsp;May 2026</div>
+    <div class="rule"></div>
+  </header>
+
+  <p class="lede">Hungry Minds has built something genuinely rare in DTC publishing: a premium physical product brand with 400,000+ copies sold, a Kickstarter that placed top 2 in publishing history, and a creator ecosystem most brands do not reach in a decade. The catalog spans The Book ($119), The Black Book, The Last Book, puzzles ($59), playing cards ($39), bundles up to $329, and a $1,000 Luxury Edition.</p>
+  <p class="lede small">The four opportunities below represent where the highest-leverage, lowest-friction growth sits right now. Every recommendation is grounded in publicly available data: the website, Meta Ads Library, Amazon reviews, TikTok, and a competitor audit.</p>
+
+  <div class="sources">
+    <h4>Data sources used in this memo</h4>
+    <ul>
+      <li><strong>Amazon</strong> — 50 reviews coded across US, CA, UK, SG, SE. ICP archetypes built from this dataset.</li>
+      <li><strong>Meta Ads Library</strong> — live audit of all 56 active ads (May 2026).</li>
+      <li><strong>TikTok</strong> — 8 top-performing affiliate/organic videos; hook, body, CTA patterns extracted.</li>
+      <li><strong>hungryminds.com</strong> — personal checkout walkthrough; all on-site gaps verified live (May 2026).</li>
+      <li><strong>Competitors</strong> — rebel-thinkers.com, assouline.com, taschen.com.</li>
+      <li><strong>Trustpilot</strong> — hungryminds.com and hungryminds.art profiles reviewed.</li>
+    </ul>
+  </div>
+
+  <!-- ICP -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-kicker">The Buyer</div>
+      <h2>Who Is the Hungry Minds Buyer?</h2>
+    </div>
+    <p>Based on coding 50 Amazon reviews across 5 markets, the buyer base breaks into 5 distinct archetypes. These ICPs are the strategic foundation for every channel recommendation in this memo.</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th class="firstcol">ICP</th><th>Share</th><th>Primary Job-to-Be-Done</th><th>Best Channel</th></tr></thead>
+        <tbody>
+          <tr><td class="firstcol">ICP 1 — The Aesthete / Coffee-Table Curator</td><td><strong>~40%</strong></td><td>Social signaling, shelf presence, object quality. Often self-identifies as “not a book person.”</td><td>IG/TikTok unboxings, r/coffeetable, r/MaleLivingSpace, interior design press</td></tr>
+          <tr><td class="firstcol">ICP 2 — The Thoughtful Gifter</td><td><strong>~30%</strong></td><td>Being seen as thoughtful. Satisfaction comes from the gift act, not the reading.</td><td>Q4 gifting flows, gift-finder content, B2B and corporate outreach</td></tr>
+          <tr><td class="firstcol">ICP 3 — The Curiosity-Coded Generalist</td><td><strong>~28%</strong></td><td>“How does the world work?” Anti-digital lean. Values physical format over scrolling.</td><td>Newsletter, creator partnerships (Kurzgesagt-adjacent), SEO</td></tr>
+          <tr><td class="firstcol">ICP 4 — The Soft Prepper</td><td><strong>~12%</strong></td><td>Apocalypse-curious, ironic register. Buys via aesthetic, not prepper keywords.</td><td>Aesthetic hooks only. Do <strong>not</strong> target hard prepper keywords in paid.</td></tr>
+          <tr><td class="firstcol">ICP 5 — The Family-Library Builder / Parent</td><td><strong>~10%</strong></td><td>Curiosity prompt for kids. Gift overlap with ICP 1 and ICP 2.</td><td>Family-focused content, parent gift listicles</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>ICPs are non-exclusive — a single buyer often fits 2–3 (e.g., Aesthete + Gifter + Soft Prepper). Paid creative, email flows, and organic content need to speak to different archetypes at different funnel stages, not one monolithic angle.</p>
+  </section>
+
+  <!-- COMPETITIVE -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-kicker">The Field</div>
+      <h2>Competitive Landscape</h2>
+    </div>
+    <p>Three competitors are relevant across different tiers of the market. The Codex is the most direct threat — same model, same buyer. Assouline competes at the premium-luxury gift tier. Taschen is the mainstream art book benchmark Hungry Minds is quietly displacing.</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th class="firstcol"></th><th>Hungry Minds — The Book</th><th>The Codex — Rebel Thinkers</th><th>Assouline</th><th>Taschen</th></tr></thead>
+        <tbody>
+          <tr><td class="firstcol">Price</td><td>$119 (book) / $1,000 (Luxury)</td><td>~$89–$119</td><td>$65–$1,500+</td><td>$30–$200+</td></tr>
+          <tr><td class="firstcol">Format</td><td>400pp illustrated hardcover</td><td>350pp illustrated hardcover</td><td>Luxury oversize hardcovers</td><td>Art/photo coffee table books</td></tr>
+          <tr><td class="firstcol">Model</td><td>DTC + Amazon + KS-machine</td><td>DTC + KS-machine</td><td>DTC + flagship retail stores</td><td>Retail-first + DTC</td></tr>
+          <tr><td class="firstcol">Illustrations</td><td>5,000+ hrs, in-house</td><td>12 Ukrainian illustrators</td><td>Photography + licensed art</td><td>Photography + licensed art</td></tr>
+          <tr><td class="firstcol">Community</td><td>Discord, Telegram, 500K+ copies</td><td>~5,000 KS backers (2024)</td><td>None at scale</td><td>None at scale</td></tr>
+          <tr><td class="firstcol">Creator Army</td><td>7+ dedicated affiliates + whitelist</td><td>Not visible at scale</td><td>No creator program</td><td>No creator program</td></tr>
+          <tr><td class="firstcol">Gift Positioning</td><td>Gift box SKU, B2B landing page</td><td>Strongly positioned as gift</td><td>Core positioning — “impossible gift”</td><td>Holiday catalog, retail gifting</td></tr>
+          <tr><td class="firstcol">Trustpilot</td><td>3.7/5 (fulfillment issues)</td><td>~5.0/5 (31 reviews)</td><td>Not tracked</td><td>Not tracked</td></tr>
+          <tr><td class="firstcol">Where HM Wins</td><td colspan="4">Scale, creator ecosystem, AOV ladder, Kickstarter-machine model, multi-SKU catalog</td></tr>
+          <tr><td class="firstcol">Where HM Is Exposed</td><td>Single creator paid dependency, fulfillment complaints, underdeveloped B2B funnel</td><td>Fresher KS cycle, cleaner gifting narrative, near-perfect Trustpilot</td><td>Stronger retail and brand prestige in corporate gifting</td><td>Massive retail distribution and brand recognition</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="takeaway">
+      <div class="tk-label">Key Takeaway</div>
+      <p>Hungry Minds is competing on creator infrastructure and community in a space where the legacy players (Taschen, Assouline) have none. The Codex is the threat that validates the same buyer with a fresher cycle. <strong>The window to compound the lead is now.</strong></p>
+    </div>
+  </section>
+
+  <!-- OPPORTUNITY 1 -->
+  <section>
+    <div class="opp-banner">Opportunity 1</div>
+    <div class="sec-head">
+      <h2><span class="num">1</span>Paid Social: Break the Single-Creator Dependency</h2>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="v">56</div><div class="l">Active Meta ads (May 2026)</div></div>
+      <div class="kpi"><div class="v">3</div><div class="l">Creators across all 56 ads</div></div>
+      <div class="kpi"><div class="v">~70%</div><div class="l">Est. impression share — 1 creator</div></div>
+      <div class="kpi"><div class="v">15–20</div><div class="l">Low impression count flags</div></div>
+    </div>
+
+    <div class="block">
+      <span class="block-label">The Signal</span>
+      <p>I audited every active ad in the Meta Ads Library for Hungry Minds Publishing in May 2026. 56 active ads — all video, zero static images, zero carousels. Two copy angles run across virtually the entire account:</p>
+      <blockquote>This book could save your life, or at least your dinner party. It's not a coffee table book. It's a conversation grenade.</blockquote>
+      <blockquote>When was the last time you read something and thought: “Wait. How did someone even think of that?”</blockquote>
+      <p>Three whitelisted creators carry the full account: <strong>@quinnlovesreading</strong> (~60–70% of visible impressions), <strong>@scientificallysavage</strong>, and <strong>@alinereads</strong>. Pages 3 and 4 of the library show explicit “Low impression count” flags on brand-controlled and non-quinn creative. One creator carrying a paid engine is a structural fragility, not a strategy.</p>
+    </div>
+
+    <h3>The Affiliate Army — What's Already Built</h3>
+    <p>Hungry Minds has assembled a dedicated creator ecosystem. These creators post exclusively or near-exclusively about the brand:</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th class="firstcol">Creator Handle</th><th>Role</th><th>Type</th></tr></thead>
+        <tbody>
+          <tr><td class="firstcol">@quinnlovesreading</td><td>Primary paid whitelist — dominant Meta impression share</td><td><span class="tag paid">Whitelist (paid)</span></td></tr>
+          <tr><td class="firstcol">@readitralph</td><td>High-performing affiliate — 10% discount code</td><td><span class="tag">Affiliate</span></td></tr>
+          <tr><td class="firstcol">@alinereads</td><td>Whitelist / affiliate — Meta and TikTok</td><td><span class="tag paid">Whitelist (paid)</span></td></tr>
+          <tr><td class="firstcol">@scientificallysavage</td><td>Whitelist — Meta</td><td><span class="tag paid">Whitelist (paid)</span></td></tr>
+          <tr><td class="firstcol">@hungrymindsmiranda</td><td>Dedicated HM TikTok account</td><td><span class="tag">Brand creator</span></td></tr>
+          <tr><td class="firstcol">@jake_thebook</td><td>Dedicated HM TikTok account</td><td><span class="tag">Brand creator</span></td></tr>
+          <tr><td class="firstcol">@hungryminds.melissa (Mel)</td><td>Dedicated HM TikTok account</td><td><span class="tag">Brand creator</span></td></tr>
+          <tr><td class="firstcol">@kari.reads</td><td>Affiliate — lower reach</td><td><span class="tag">Affiliate</span></td></tr>
+          <tr><td class="firstcol">@julesreadsthebook</td><td>Affiliate — 10% off code — highest save count in the dataset (170.8K)</td><td><span class="tag">Affiliate</span></td></tr>
+          <tr><td class="firstcol">@christopherkriel_</td><td>Affiliate — 10% off code</td><td><span class="tag">Affiliate</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Top Organic Video Performance</h3>
+    <p>Public TikTok data, May 2026. Saves are the most important metric — the closest public proxy for purchase intent:</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th class="firstcol">Creator</th><th>Likes</th><th>Saves</th><th>Length</th><th>Winning Angle</th></tr></thead>
+        <tbody>
+          <tr><td class="firstcol">@julesreadsthebook</td><td>588K</td><td><strong>170.8K</strong></td><td>50s</td><td>“Banned in so many countries” — forbidden knowledge</td></tr>
+          <tr><td class="firstcol">@feleciaforthewin</td><td>305.9K</td><td>93.5K</td><td>1m 5s</td><td>Object reveal — “coolest book in my collection”</td></tr>
+          <tr><td class="firstcol">@buffyonyx</td><td>268.1K</td><td>66.4K</td><td>2m 17s</td><td>Society collapse opener — curiosity + shock</td></tr>
+          <tr><td class="firstcol">@christopherkriel_</td><td>107.1K</td><td>39.3K</td><td>58s</td><td>“50 ways to see the world” — gift CTA</td></tr>
+          <tr><td class="firstcol">@quinnlovesreading</td><td>121.8K</td><td>57.6K</td><td>2m 39s</td><td>Survival tips / penicillin — soft prepper angle</td></tr>
+          <tr><td class="firstcol">@quinnlovesreading</td><td>111.5K</td><td>35.7K</td><td>20s</td><td>“Governments get nervous reading this” — forbidden knowledge</td></tr>
+          <tr><td class="firstcol">@readitralph</td><td>104.2K</td><td>38.5K</td><td>30s</td><td>“Banned in some places” — forbidden knowledge</td></tr>
+          <tr><td class="firstcol">@polskihussar</td><td>84.3K</td><td>25.9K</td><td>31s</td><td>Gloved unboxing — object prestige / aesthetic</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The brand's dedicated creator accounts (@hungrymindsmiranda, @jake_thebook, @hungryminds.melissa) underperform the affiliates despite having the same product access. That tells me the brief matters more than the creator.</p>
+
+    <div class="block">
+      <span class="block-label gold">The Opportunity</span>
+      <ul class="checks">
+        <li><strong>Engineer the winning formula from the top 10 organic videos</strong> — starting with @julesreadsthebook and @quinnlovesreading. Extract hook structure, body arc, and CTA. Apply this as the creative brief for all existing dedicated brand accounts and any new creator onboarding.</li>
+        <li><strong>Expand the whitelist roster from 3 to 8–10 creators.</strong> Target lookalikes to the organic winners — book-curious TikTok, soft prepper accounts, aesthetic/interior design creators. The playbook is proven. More hands running it at scale.</li>
+        <li><strong>Test a social-proof compilation ad</strong> — cut a single video from real creator clips, viewer screenshots, and comment reactions: a montage of organic word-of-mouth. Near-zero production cost from existing assets.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- OPPORTUNITY 2 -->
+  <section>
+    <div class="opp-banner">Opportunity 2</div>
+    <div class="sec-head">
+      <h2><span class="num">2</span>On-Site CRO: Fix the Leaks Before Scaling Spend</h2>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="v">$119</div><div class="l">Entry AOV — The Book</div></div>
+      <div class="kpi"><div class="v">$19</div><div class="l">Max bundle discount offered</div></div>
+      <div class="kpi"><div class="v">15–20%</div><div class="l">AOV lift from BNPL (Shopify data)</div></div>
+      <div class="kpi"><div class="v">0</div><div class="l">Klarna / Affirm at checkout</div></div>
+    </div>
+
+    <div class="block">
+      <span class="block-label">The Signal</span>
+      <p>I walked through the Hungry Minds checkout flow personally in May 2026. These are live gaps:</p>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th class="firstcol">Gap</th><th>What I Found</th><th>Why It Matters</th></tr></thead>
+        <tbody>
+          <tr><td class="firstcol">Non-sticky ATC</td><td>Add-to-cart disappears when scrolling — not truly sticky. Reference benchmark: IM8 (im8.com).</td><td>Every scroll-past is conversion intent that paid media already paid for. One CSS fix recovers it.</td></tr>
+          <tr><td class="firstcol">No BNPL</td><td>Zero Klarna, Affirm, or Shop Pay Installments at checkout.</td><td>Shopify data: BNPL increases AOV 15–20%. “Expensive” is the top comment objection across all 8 TikTok videos analyzed.</td></tr>
+          <tr><td class="firstcol">Weak bundle incentive</td><td>Max visible discount is $19 regardless of bundle size. No urgency, no framing.</td><td>Under 10% off a $200+ order is not a compelling upsell driver. Worth revisiting depending on COGS.</td></tr>
+          <tr><td class="firstcol">Cart upsell — no reason to take it</td><td>Puzzle upsell ($59) appears in cart with no discount shown. The $19 bundle saving exists but is not surfaced in the upsell.</td><td>The upsell is there. The reason to take it is not. “Save $19 when you bundle” is a zero-dev copy fix.</td></tr>
+          <tr><td class="firstcol">Navigation clutter</td><td>No “Bestsellers” or “Bundles” category in main nav. Products are not organized by purchase intent.</td><td>ICP 2 (Thoughtful Gifter, ~30% of buyers) needs a shortcut. “Bundle &amp; Save” as a top-level nav item reduces decision fatigue for gift buyers from paid.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="block">
+      <span class="block-label gold">The Opportunity</span>
+      <ul class="checks">
+        <li><strong>Sticky ATC</strong> — CSS/theme fix. Single sprint. Prevents losing conversion intent mid-scroll.</li>
+        <li><strong>BNPL</strong> — Shopify app install (Klarna, Affirm, or Shop Pay Installments). Sub-one-day implementation. Directly addresses the price objection visible in TikTok comment data.</li>
+        <li><strong>Surface the bundle saving in cart</strong> — “Add the puzzle and save $19” — copy change only. Longer term: pressure-test whether a higher discount is margin-positive.</li>
+        <li><strong>Add “Bestsellers” and “Bundle &amp; Save” as top-level nav categories.</strong> Reduces friction for gift buyers from paid social.</li>
+      </ul>
+    </div>
+    <div class="takeaway">
+      <div class="tk-label">Principle</div>
+      <p>Do not scale paid spend into a funnel with these gaps. <strong>Fix the container first.</strong></p>
+    </div>
+  </section>
+
+  <!-- OPPORTUNITY 3 -->
+  <section>
+    <div class="opp-banner">Opportunity 3</div>
+    <div class="sec-head">
+      <h2><span class="num">3</span>Email: Reclassify, Reschedule, Add a Content Layer</h2>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="v">8</div><div class="l">Emails in 7 days to a cold lead</div></div>
+      <div class="kpi"><div class="v">0</div><div class="l">Educational / newsletter emails</div></div>
+      <div class="kpi"><div class="v">28%</div><div class="l">Amazon reviews praising knowledge</div></div>
+      <div class="kpi"><div class="v">0</div><div class="l">Gifting angle in any flow</div></div>
+    </div>
+
+    <div class="block">
+      <span class="block-label">Email Audit — What I Received</span>
+      <p>I subscribed to the Hungry Minds list and received 8 emails in 7 days. Full classification:</p>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>#</th><th class="firstcol">Type</th><th>Hook / Subject</th><th>CTA</th><th>Key Observation</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td class="firstcol">PROMO / Nurture</td><td>THE BOOK &gt; EVERY OTHER BOOK</td><td>Complete Your Order</td><td>Heavy social proof. Strong brand voice. Fires broad.</td></tr>
+          <tr><td>2</td><td class="firstcol">PRODUCT — Gift Card</td><td>An Instantly Perfect Gift</td><td>Gift Now</td><td>Only gifting email in the entire sequence. Gendered copy (“Give her”) — worth A/B testing.</td></tr>
+          <tr><td>3</td><td class="firstcol">PROMO / Cart Abandon</td><td>It Belongs in Your Hands, Not Your Cart</td><td>Complete Your Order</td><td>Survival/doomsday tone. No bundle mention.</td></tr>
+          <tr><td>4</td><td class="firstcol">PROMO / Cart Abandon</td><td>A World of Wonder is a Click Away</td><td>Ship For Free</td><td>Free shipping hook. Good CTA.</td></tr>
+          <tr><td>5</td><td class="firstcol">PRODUCT / Content</td><td>Limitless Knowledge on Every Page</td><td>Complete Your Order</td><td>Best product storytelling in the sequence. Should be earlier — Email 2 or 3.</td></tr>
+          <tr><td>6</td><td class="firstcol">PRODUCT / Bundle Upsell</td><td>Do You Have What It Takes to Rebuild the New World?</td><td>Shop the Set</td><td>First bundle mention. Email 6 of 8. Too late.</td></tr>
+          <tr><td>7</td><td class="firstcol">PROMO / Social Proof</td><td>Still Thinking About This? You're Not the Only One…</td><td>Return to Checkout</td><td>Group chat visual is smart. Community angle works.</td></tr>
+          <tr><td>8</td><td class="firstcol">PROMO / Founder Note</td><td>They're Waiting for You — +5 Free Bookmarks</td><td>Return to Cart</td><td>Strongest personal touch. Founder note from Seva. Bookmarks offer is a good instinct.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>What's Missing</h3>
+    <ul class="checks">
+      <li><strong>No educational content.</strong> 28% of Amazon reviews praise the knowledge inside the book. Not a single email teaches them anything.</li>
+      <li><strong>No gifting track.</strong> ICP 2 (Thoughtful Gifter, ~30% of buyers) is touched by one email (Email 2). No volume hints, no corporate angle, no “perfect for the person who has everything.”</li>
+      <li><strong>Bundle introduced at Email 6.</strong> Gift and curiosity buyers who might trade up to $200+ have been in the sequence for days before seeing it.</li>
+      <li><strong>Cadence aggressive.</strong> 8 emails in 7 days for a non-purchaser risks list fatigue. Industry benchmark for non-purchaser nurture: 48-hour minimum gaps.</li>
+    </ul>
+
+    <h3>Email Screenshots — Full Sequence</h3>
+    <p>All 8 emails as received, in order. Inbox view — full cadence overview:</p>
+    <div class="gallery wide">
+      <figure><img src="assets/emails/00-inbox-overview.png" alt="Inbox view — full cadence overview" loading="lazy"><figcaption>Inbox view<span class="et">Full cadence overview — 8 emails in 7 days</span></figcaption></figure>
+    </div>
+    <div class="gallery">
+      <figure><img src="assets/emails/01-promo-nurture.png" alt="Email 1 — PROMO / Nurture" loading="lazy"><figcaption>Email 1<span class="et">PROMO / Nurture</span></figcaption></figure>
+      <figure><img src="assets/emails/02-gift-card.png" alt="Email 2 — PRODUCT / Gift Card" loading="lazy"><figcaption>Email 2<span class="et">PRODUCT / Gift Card</span></figcaption></figure>
+      <figure><img src="assets/emails/03-cart-abandon.png" alt="Email 3 — PROMO / Cart Abandon" loading="lazy"><figcaption>Email 3<span class="et">PROMO / Cart Abandon</span></figcaption></figure>
+      <figure><img src="assets/emails/04-cart-abandon.png" alt="Email 4 — PROMO / Cart Abandon" loading="lazy"><figcaption>Email 4<span class="et">PROMO / Cart Abandon</span></figcaption></figure>
+      <figure><img src="assets/emails/05-content.png" alt="Email 5 — PRODUCT / Content (Best in Sequence)" loading="lazy"><figcaption>Email 5<span class="et">PRODUCT / Content — best in sequence</span></figcaption></figure>
+      <figure><img src="assets/emails/05b-content-cont.png" alt="Email 5 — continued" loading="lazy"><figcaption>Email 5<span class="et">continued</span></figcaption></figure>
+      <figure><img src="assets/emails/06-bundle-upsell.png" alt="Email 6 — PRODUCT / Bundle Upsell" loading="lazy"><figcaption>Email 6<span class="et">PRODUCT / Bundle Upsell</span></figcaption></figure>
+      <figure><img src="assets/emails/07-social-proof.png" alt="Email 7 — PROMO / Social Proof" loading="lazy"><figcaption>Email 7<span class="et">PROMO / Social Proof</span></figcaption></figure>
+      <figure><img src="assets/emails/08-founder-note.png" alt="Email 8 — PROMO / Founder Note" loading="lazy"><figcaption>Email 8<span class="et">PROMO / Founder Note</span></figcaption></figure>
+    </div>
+
+    <div class="block">
+      <span class="block-label gold">The Opportunity — TikTok-Seeded Content Layer</span>
+      <p>The highest-value addition to the email program is a newsletter layer that converts TikTok viral moments into owned-audience touchpoints. The content cost is near-zero — the knowledge already exists in the book.</p>
+      <p><strong>How it works in practice:</strong> @quinnlovesreading posts about making penicillin. @julesreadsthebook posts a “banned book” video pulling 588K likes. Those viewers land on the email list. The newsletter picks up the same thread — “Here's the full chapter. Here's what quinn was talking about.” Links the creator video. Links the product.</p>
+      <ul class="checks">
+        <li><strong>Bi-weekly content email</strong> seeded from top-performing TikTok topics — penicillin, fire-starting, civilizational collapse, hantavirus, doomsday angles as they trend.</li>
+        <li><strong>Embed or link the creator video in the email</strong> — “Here's what @quinnlovesreading said about it” — bridges social and email, reinforces purchase intent for ICP 3 (Curiosity-Coded Generalist, ~28% of buyers).</li>
+        <li><strong>Segment:</strong> ICP 3 gets the content track. ICP 2 (Thoughtful Gifter) gets a separate gifting-focused track with bundle suggestions and volume pricing hints.</li>
+        <li><strong>Cross-sell:</strong> each newsletter issue features one relevant SKU — The Black Book, The Puzzle, Luxury Edition for high-LTV subscribers.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- OPPORTUNITY 4 -->
+  <section>
+    <div class="opp-banner">Opportunity 4</div>
+    <div class="sec-head">
+      <h2><span class="num">4</span>B2B &amp; Corporate Gifting: A Channel That Does Not Need Q4</h2>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="v">~30%</div><div class="l">Amazon reviews with gift context</div></div>
+      <div class="kpi"><div class="v">$139</div><div class="l">Gift box SKU — live but underused</div></div>
+      <div class="kpi"><div class="v">1</div><div class="l">B2B landing page — basic, no funnel</div></div>
+      <div class="kpi"><div class="v">0</div><div class="l">Corporate copy in email flows</div></div>
+    </div>
+
+    <div class="block">
+      <span class="block-label">The Signal</span>
+      <p>From 50 coded Amazon reviews: approximately 30% have explicit gift context — bought as a birthday, Christmas, or anniversary gift, or deliberately for someone else. Multiple reviews note “I bought this for my husband,” “bought two as gifts,” family gifting patterns across markets. This is ICP 2 (The Thoughtful Gifter) showing up in the purchase data at scale.</p>
+      <p>Five public signals show Hungry Minds is already thinking about B2B:</p>
+      <ul class="checks">
+        <li>A dedicated B2B / corporate gifting landing page exists — captures contact info, but no visible conversion path or follow-up infrastructure.</li>
+        <li>A $139 gift box SKU is live in the catalog.</li>
+        <li>Atlanta Market Winter 2026 appearance — a wholesale gift trade show. Public signal of B2B intent.</li>
+        <li>Press coverage in Forbes, GQ, Vogue, Globe &amp; Mail — the social proof a procurement manager needs to justify a $100+ per-head executive gift spend.</li>
+        <li>The book's premise (rebuilding civilization, knowledge for any future) plays directly into B2B contexts: onboarding gifts, leadership offsites, client appreciation for consulting, finance, and tech firms.</li>
+      </ul>
+    </div>
+    <div class="note">
+      <b>Assumption I am working with</b>
+      I do not know whether Hungry Minds has an internal sales team or existing corporate accounts. The recommendation assumes no structured B2B motion yet — which is what the basic landing page and absence of B2B email copy suggests. If corporate accounts already exist, the upside is larger.
+    </div>
+
+    <div class="block">
+      <span class="block-label gold">The Opportunity</span>
+      <p>Corporate gifting does not depend on Q4. A procurement manager ordering 50 copies for a Q1 leadership offsite is as valuable as a Christmas spike — and far more predictable.</p>
+      <ul class="checks">
+        <li><strong>Upgrade the landing page</strong> from a contact form to a proper B2B conversion surface: volume pricing tiers, “request a sample” CTA, turnaround SLA for bulk orders, and any existing corporate buyer testimonials.</li>
+        <li><strong>Build a short LinkedIn outbound sequence</strong> targeting EAs, office managers, and procurement leads at finance, consulting, and tech firms. The Forbes/GQ press coverage is the cold-outreach credibility that makes the pitch land.</li>
+        <li><strong>Add a gifting email track to existing Klaviyo flows.</strong> ICP 2 has one email in the current sequence. A dedicated gifting track with bundle suggestions, volume pricing hints, and corporate use-case framing captures both individual and bulk gift buyers.</li>
+        <li><strong>Build a 4-campaign annual gifting calendar:</strong> Q4 holiday, Q1 fiscal year-end (March/April), company anniversary season, leadership onboarding (September). Corporate gifting is a year-round channel if you build the infrastructure.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PRIORITY SEQUENCING -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-kicker">The Order</div>
+      <h2>Priority Sequencing</h2>
+    </div>
+    <p>These four opportunities compound. A better on-site experience makes paid spend convert at a higher rate. A stronger creator roster grows the email list faster. A newsletter builds the owned audience that makes B2B credible. The order matters.</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>#</th><th class="firstcol">Opportunity</th><th>Why This Sequence</th><th>Effort</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td class="firstcol">On-Site CRO + AOV</td><td>Paid media is already running into this funnel. Every day these gaps exist is wasted spend.</td><td><span class="tag">Low — CSS, copy, Shopify apps</span></td></tr>
+          <tr><td>2</td><td class="firstcol">Paid Social — Creator Scale</td><td>Fix the container, then pour more in. Diversify before scaling budget.</td><td><span class="tag">Medium — recruit, brief, whitelist</span></td></tr>
+          <tr><td>3</td><td class="firstcol">Email — Content Layer</td><td>Owned audience is underused. Newsletter layer is low-cost content with compounding LTV impact.</td><td><span class="tag">Medium — Klaviyo, content, segmentation</span></td></tr>
+          <tr><td>4</td><td class="firstcol">B2B / Corporate Gifting</td><td>Real infrastructure signal exists. Needs landing page upgrade and outbound motion.</td><td><span class="tag">Medium — page, LinkedIn, email track</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="fwrap">
+    <div class="fmark">Hungry Minds</div>
+    <div class="fdiv"></div>
+    <p class="ftag">A collective intellect united by curiosity and a passion for the beautiful.</p>
+    <p>Growth Memo · Prepared by K · May 2026</p>
+    <p>All data sourced from publicly available information.</p>
+  </div>
+</footer>
+
+</body>
+</html>
