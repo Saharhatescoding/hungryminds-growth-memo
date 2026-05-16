@@ -48,6 +48,7 @@
     font-family:"Rethink Sans",Arial,Helvetica,sans-serif;
     color:var(--oxblood);
     background:var(--paper);
+    overflow-x:hidden;
     font-size:17px;
     line-height:1.72;
     -webkit-font-smoothing:antialiased;
@@ -58,14 +59,14 @@
   body::before{
     content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
     background:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='190' viewBox='0 0 190 190'%3E%3Cg fill='%23001026' fill-opacity='0.022'%3E%3Cpath d='M32 26l2 6 6 2-6 2-2 6-2-6-6-2 6-2z'/%3E%3Cpath d='M138 64l1.6 5 5 1.6-5 1.6-1.6 5-1.6-5-5-1.6 5-1.6z'/%3E%3Cpath d='M84 126l2 6 6 2-6 2-2 6-2-6-6-2 6-2z'/%3E%3Ccircle cx='158' cy='150' r='1.6'/%3E%3Ccircle cx='20' cy='158' r='1.4'/%3E%3Ccircle cx='106' cy='30' r='1.4'/%3E%3Ccircle cx='168' cy='40' r='1.2'/%3E%3C/g%3E%3C/svg%3E"),
-      radial-gradient(circle at 18% 12%,rgba(197,173,129,.05),transparent 45%),
-      radial-gradient(circle at 84% 78%,rgba(0,16,38,.025),transparent 48%),
-      radial-gradient(circle at 50% 120%,rgba(197,173,129,.035),transparent 58%);
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='190' viewBox='0 0 190 190'%3E%3Cg fill='%23001026' fill-opacity='0.013'%3E%3Cpath d='M32 26l2 6 6 2-6 2-2 6-2-6-6-2 6-2z'/%3E%3Cpath d='M138 64l1.6 5 5 1.6-5 1.6-1.6 5-1.6-5-5-1.6 5-1.6z'/%3E%3Cpath d='M84 126l2 6 6 2-6 2-2 6-2-6-6-2 6-2z'/%3E%3Ccircle cx='158' cy='150' r='1.6'/%3E%3Ccircle cx='20' cy='158' r='1.4'/%3E%3Ccircle cx='106' cy='30' r='1.4'/%3E%3Ccircle cx='168' cy='40' r='1.2'/%3E%3C/g%3E%3C/svg%3E"),
+      radial-gradient(circle at 18% 12%,rgba(197,173,129,.03),transparent 48%),
+      radial-gradient(circle at 84% 78%,rgba(0,16,38,.015),transparent 50%),
+      radial-gradient(circle at 50% 120%,rgba(197,173,129,.02),transparent 60%);
   }
   /* the great astrolabe — fixed, faint, behind everything */
   .cel-bg{position:fixed;inset:0;z-index:0;pointer-events:none;display:flex;align-items:center;justify-content:center;overflow:hidden}
-  .cel-bg svg{width:min(155vh,155vw);height:min(155vh,155vw);color:#8a6a3c;opacity:.028;animation:cel-rotate 300s linear infinite}
+  .cel-bg svg{width:min(150vh,150vw);height:min(150vh,150vw);color:#8a6a3c;opacity:.016;animation:cel-rotate 320s linear infinite}
   @keyframes cel-rotate{to{transform:rotate(360deg)}}
   @media (prefers-reduced-motion:reduce){.cel-bg svg{animation:none}}
   .wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:0 28px}
@@ -77,10 +78,16 @@
   .topbar{height:5px;background:linear-gradient(90deg,var(--ink) 0%,var(--gold) 50%,var(--ink) 100%)}
 
   /* ---------- Hero ---------- */
-  header.hero{text-align:center;padding:64px 0 34px;position:relative}
+  header.hero{text-align:center;padding:70px 0 44px;position:relative}
+  /* solid full-bleed parchment band behind the masthead, fading into the page */
+  header.hero::after{
+    content:"";position:absolute;top:-5px;bottom:0;left:50%;width:100vw;transform:translateX(-50%);
+    background:linear-gradient(180deg,#FBF7EE 0%,#FBF7EE 78%,rgba(251,247,238,0) 100%);
+    z-index:-1;pointer-events:none;
+  }
   .hero>*{position:relative;z-index:1}
-  .hero-cel{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);
-    width:min(640px,118%);height:auto;color:var(--gold);opacity:.22;z-index:0;pointer-events:none}
+  .hero-cel{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);
+    width:min(560px,104%);height:auto;color:var(--gold);opacity:.14;z-index:0;pointer-events:none}
   .hero img.logo{width:330px;max-width:78%;height:auto;margin:0 auto 30px;display:block}
   .eyebrow{
     font-family:"Rethink Sans",sans-serif;
